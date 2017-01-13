@@ -21,8 +21,8 @@ public class HomePageSD {
         homePage.isHomePageDisplayed();
     }
 
-    @And("^the company logo on home page is appears$")
-    public void the_company_logo_on_home_page_is_appears() {
+    @And("^the company logo on home page appears$")
+    public void the_company_logo_on_home_page_appears() {
         homePage.isCompanyLogoVisibleInHomePage();
     }
 

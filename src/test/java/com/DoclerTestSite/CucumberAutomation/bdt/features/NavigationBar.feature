@@ -6,9 +6,9 @@ Feature: NavigationBar
   Scenario Outline: DTS_NB_01-Clicks through all menu item and s Site Logo appearence
     Given user is on landing page
     When <Button> is available
-    And user clicks on <Button>
+    And user clicks to the <Button>
     Then <Page> loads
-    And Site Logo is appears
+    And Site Logo appears
   Examples:
     | Button      | Page |
     | Home button | home page |
@@ -18,9 +18,9 @@ Feature: NavigationBar
   Scenario Outline: DTS_NB_02-Clicks through all menu item and checks Company Logo appearence
     Given user is on landing page
     When <Button> is available
-    And user clicks on <Button>
+    And user clicks to the <Button>
     Then <Page> loads
-    And the company logo on <Page> is appears
+    And the company logo on <Page> appears
     Examples:
       | Button      | Page |
       | Home button | home page |
@@ -30,9 +30,9 @@ Feature: NavigationBar
   Scenario Outline: DTS_NB_03-Clicks through all menu item and checks is menu item become active
     Given user is on landing page
     When <Button> is available
-    And user clicks on <Button>
+    And user clicks to the <Button>
     Then <Page> loads
-    And  <Button> turns active state
+    And  <Button> turns into active state
     Examples:
       | Button      | Page      |
       | Home button | home page |
@@ -41,6 +41,6 @@ Feature: NavigationBar
 
   Scenario: DTS_NB_04-Check Error button function
     Given user is on landing page
-    When user clicks on Error button
+    When user clicks to the Error button
     Then system gives HTTP 404 response
 

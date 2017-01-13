@@ -19,13 +19,13 @@ public class NavigationBarSD {
         navigationBar.isFormButtonDisplayed();
     }
 
-    @When("^user clicks on Home button$")
-    public void user_clicks_on_Home_button()  {
+    @When("^user clicks to the Home button$")
+    public void user_clicks_to_the_Home_button()  {
         navigationBar.clickToHomeButton();
     }
 
-    @And("^Home button turns active state$")
-    public void home_button_turns_active_state(){
+    @And("^Home button turns into active state$")
+    public void home_button_turns_into_active_state(){
         navigationBar.isHomeButtonActive();
     }
 
@@ -34,18 +34,18 @@ public class NavigationBarSD {
         navigationBar.isFormButtonDisplayed();
     }
 
-    @When("^user clicks on Form button$")
+    @When("^user clicks to the Form button$")
     public void user_clicks_on_Form_button()  {
         navigationBar.clickToFormButton();
     }
 
     @And("^Form button turns active state$")
-    public void Form_button_turns_active_state(){
+    public void Form_button_turns_into_active_state(){
         navigationBar.isFormButtonActive();
     }
 
-    @When("^user clicks on Error button$")
-    public void user_clicks_on_Error_button()  {
+    @When("^user clicks to the Error button$")
+    public void user_clicks_to_the_Error_button()  {
         navigationBar.clickToErrorButton();
     }
 
@@ -54,12 +54,12 @@ public class NavigationBarSD {
         errorMethod.verifyErrorMessage();
     }
 
-    @When("^user clicks on Site Logo$")
-    public void user_clicks_on_Site_Logo()  {
+    @When("^user clicks to the Site Logo$")
+    public void user_clicks_to_the_Site_Logo()  {
         navigationBar.clickToSiteLogo();
     }
 
-    @And("^Site Logo is appears$")
+    @And("^Site Logo appears$")
     public void Site_Logo_is_appears(){
         navigationBar.isSiteLogoDisplayed();
     }

@@ -18,8 +18,8 @@ public class FormPageSD {
         formPage.isformsectionDisplayed();
     }
 
-    @And("^the company logo on form page is appears$")
-    public void the_company_logo_on_form_page_is_appears() {
+    @And("^the company logo on form page appears$")
+    public void the_company_logo_on_form_page_appears() {
         formPage.isCompanyLogoVisibleInFormPage();
     }
 
@@ -28,8 +28,8 @@ public class FormPageSD {
         formPage.enterTextBox(arg1);
     }
 
-    @And("^user clicks the GO button$")
-    public void user_clicks_the_GO_button() {
+    @And("^user clicks to the GO button$")
+    public void user_clicks_to_the_GO_button() {
         formPage.clickToTheGoButton();
     }
 
