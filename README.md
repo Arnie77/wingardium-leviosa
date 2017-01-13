@@ -16,3 +16,6 @@ Some Automated Test to an Website
 2. Open a CMD prompt
 3. Navigate to project folder
 4. Run the test with "mvn test"
+
+## After run
+The generated report is: target/cucumber/index.html
