@@ -37,7 +37,6 @@ Feature: NavigationBar
       | Button      | Page      |
       | Home button | home page |
       | Form button | form page |
-      | Site logo   | home page |
 
   Scenario: DTS_NB_04-Check Error button function
     Given user is on landing page
