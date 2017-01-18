@@ -3,12 +3,11 @@ package com.DoclerTestSite.CucumberAutomation.utils;
         import java.awt.*;
         import java.awt.event.KeyEvent;
         import java.net.MalformedURLException;
-        import java.util.concurrent.Delayed;
-        import java.util.concurrent.TimeUnit;
 
         import org.openqa.selenium.WebDriver;
         import org.openqa.selenium.firefox.FirefoxDriver;
         import org.openqa.selenium.support.ui.WebDriverWait;
+
 
 public class DriverFactory {
 
@@ -43,9 +42,23 @@ public class DriverFactory {
      */
     public void teardown() {
 
-      //  driver.quit();
+        /**
+         * I can't use the driver.quit(), driver.close() because there is some issue between latest Firefox and Selenium 3.0.1
+         *
+         * driver.close();
+         * driver.quit();
+         */
+        
 
-        System.out.println("Scenario ENDED");
+        // Using robot to close Browser
+        Robot robot = null;
+        try {
+            robot = new Robot();
+        } catch (AWTException e) {
+            e.printStackTrace();
+        }
+        robot.keyPress(KeyEvent.VK_ALT);
+        robot.keyPress(KeyEvent.VK_F4);
 
     }
 }

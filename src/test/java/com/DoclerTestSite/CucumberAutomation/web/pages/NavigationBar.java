@@ -1,15 +1,13 @@
 package com.DoclerTestSite.CucumberAutomation.web.pages;
 
-import static com.DoclerTestSite.CucumberAutomation.utils.DriverFactory.*;
-import static junit.framework.TestCase.assertTrue;
-
+import com.DoclerTestSite.CucumberAutomation.utils.ElementHandler;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 /**
  * Created by Arnie on 2017.01.12..
  */
-public class NavigationBar{
+public class NavigationBar extends ElementHandler {
 
     /**
      * All locators will be mentioned here
@@ -31,52 +29,54 @@ public class NavigationBar{
      * All functions related to behavior will follow now
      */
 
-    public void isNavigationBarDisplayed() {
-        waitVar.until(ExpectedConditions.presenceOfElementLocated(NavBarBody));
+    public void waitForNavigationBarIsDisplayed() {
+       waitForElementAppearance(NavBarBody);
     }
 
     public void isSiteLogoDisplayed() {
-        waitVar.until(ExpectedConditions.presenceOfElementLocated(SiteLogo));
+        waitForNavigationBarIsDisplayed();
+        checkElementIsDisplayed(SiteLogo);
     }
 
     public void clickToSiteLogo() {
-        waitVar.until(ExpectedConditions.presenceOfElementLocated(NavBarBody));
-        driver.findElement(SiteLogo).click();
+        waitForNavigationBarIsDisplayed();
+        clickToElement(SiteLogo);
     }
 
     public void isHomeButtonDisplayed() {
-        waitVar.until(ExpectedConditions.presenceOfElementLocated(NavBarBody));
-        driver.findElement(HomeButton).isDisplayed();
+        waitForNavigationBarIsDisplayed();
+        checkElementIsDisplayed(HomeButton);
     }
     public void isHomeButtonActive() {
-        waitVar.until(ExpectedConditions.presenceOfElementLocated(NavBarBody));
-        driver.findElement(ActiveHomeButton).isDisplayed();
+        waitForNavigationBarIsDisplayed();
+        checkElementIsDisplayed(ActiveHomeButton);
     }
     public void clickToHomeButton() {
-        waitVar.until(ExpectedConditions.presenceOfElementLocated(NavBarBody));
-        driver.findElement(HomeButton).click();
+        waitForNavigationBarIsDisplayed();
+        clickToElement(HomeButton);
     }
 
     public void isFormButtonDisplayed() {
-        waitVar.until(ExpectedConditions.presenceOfElementLocated(NavBarBody));
-        driver.findElement(FormButton).isDisplayed();
+        waitForNavigationBarIsDisplayed();
+        checkElementIsDisplayed(FormButton);
     }
     public void isFormButtonActive() {
-        waitVar.until(ExpectedConditions.presenceOfElementLocated(NavBarBody));
-        driver.findElement(ActiveFormButton).isDisplayed();
+        waitForNavigationBarIsDisplayed();
+        checkElementIsDisplayed(ActiveFormButton);
     }
+
     public void clickToFormButton() {
-        waitVar.until(ExpectedConditions.presenceOfElementLocated(NavBarBody));
-        driver.findElement(FormButton).click();
+        waitForNavigationBarIsDisplayed();
+        clickToElement(FormButton);
     }
 
     public void isErrorButtonDisplayed() {
-        waitVar.until(ExpectedConditions.presenceOfElementLocated(NavBarBody));
-        driver.findElement(ErrorButton).isDisplayed();
+        waitForNavigationBarIsDisplayed();
+        checkElementIsDisplayed(ErrorButton);
     }
     public void clickToErrorButton() {
-        waitVar.until(ExpectedConditions.presenceOfElementLocated(NavBarBody));
-        driver.findElement(ErrorButton).click();
+        waitForNavigationBarIsDisplayed();
+        clickToElement(ErrorButton);
     }
 
 }

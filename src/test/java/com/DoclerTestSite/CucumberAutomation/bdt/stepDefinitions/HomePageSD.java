@@ -3,7 +3,6 @@ package com.DoclerTestSite.CucumberAutomation.bdt.stepDefinitions;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
 
 import static com.DoclerTestSite.CucumberAutomation.bdt.cucumberOptions.RunTest.*;
 
@@ -12,7 +11,7 @@ public class HomePageSD {
 
     @Given("^user is on landing page$")
     public void user_is_on_landing_page()  {
-        navigationBar.isNavigationBarDisplayed();
+        navigationBar.waitForNavigationBarIsDisplayed();
         homePage.isHomePageDisplayed();
     }
 

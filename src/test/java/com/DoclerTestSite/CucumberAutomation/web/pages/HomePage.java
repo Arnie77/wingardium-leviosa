@@ -1,10 +1,12 @@
 package com.DoclerTestSite.CucumberAutomation.web.pages;
 
 import static com.DoclerTestSite.CucumberAutomation.utils.DriverFactory.*;
+
+import com.DoclerTestSite.CucumberAutomation.utils.ElementHandler;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class HomePage {
+public class HomePage extends ElementHandler{
 
     /**
      * All locators will be mentioned here
@@ -20,13 +22,13 @@ public class HomePage {
      * All functions related to behavior will follow now
      */
     public void isHomePageDisplayed() {
-        waitVar.until(ExpectedConditions.presenceOfElementLocated(WelcomeText));
-        waitVar.until(ExpectedConditions.presenceOfElementLocated(Description));
+        waitForElementAppearance(WelcomeText);
+        waitForElementAppearance(Description);
         isCompanyLogoVisibleInHomePage();
     }
 
     public void isCompanyLogoVisibleInHomePage() {
-        waitVar.until(ExpectedConditions.presenceOfElementLocated(CompanyLogo));
+        waitForElementAppearance(CompanyLogo);
     }
 
 }

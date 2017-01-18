@@ -1,11 +1,14 @@
 package com.DoclerTestSite.CucumberAutomation.web.pages;
 
+import com.DoclerTestSite.CucumberAutomation.utils.ElementHandler;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
+import javax.xml.soap.Text;
+
 import static com.DoclerTestSite.CucumberAutomation.utils.DriverFactory.*;
 
-public class FormPage {
+public class FormPage extends ElementHandler {
 
     /**
      * All locators will be mentioned here
@@ -24,24 +27,24 @@ public class FormPage {
      */
 
     public void isFormPageDisplayed() {
-        waitVar.until(ExpectedConditions.presenceOfElementLocated(TitleText));
+        waitForElementAppearance(TitleText);
     }
 
     public void isCompanyLogoVisibleInFormPage(){
-        waitVar.until(ExpectedConditions.presenceOfElementLocated(CompanyLogo));
+        waitForElementAppearance(CompanyLogo);
     }
 
     public void isformsectionDisplayed() {
-        waitVar.until(ExpectedConditions.presenceOfElementLocated(TextBox));
-        waitVar.until(ExpectedConditions.presenceOfElementLocated(GoButtonRelatedToTextBox));
+        waitForElementAppearance(TextBox);
+        waitForElementAppearance(GoButtonRelatedToTextBox);
     }
 
     public void enterTextBox(String text){
-        driver.findElement(TextBox).sendKeys(text);
+        sendStringToElement(TextBox, text);
     }
 
     public void clickToTheGoButton() {
-        driver.findElement(GoButtonRelatedToTextBox).click();
+        clickToElement(GoButtonRelatedToTextBox);
     }
 
     public void checkFormresult(String resultText) {
@@ -50,8 +53,7 @@ public class FormPage {
          */
         String xpathTextSecondPart = "[text()='"+resultText+"']";
         By path = By.xpath(FormResultTextXpathFirstPart+xpathTextSecondPart);
-        waitVar.until(ExpectedConditions.presenceOfElementLocated(path));
-    }
+        waitForElementAppearance(path);    }
 
 
 }

@@ -11,7 +11,7 @@ public class NavigationBarSD {
 
     @Given("^the Navbar is displayed$")
     public void the_Navbar_is_displayed()  {
-        navigationBar.isNavigationBarDisplayed();
+        navigationBar.waitForNavigationBarIsDisplayed();
     }
 
     @And("^Home button is available$")
@@ -39,7 +39,7 @@ public class NavigationBarSD {
         navigationBar.clickToFormButton();
     }
 
-    @And("^Form button turns active state$")
+    @And("^Form button turns into active state$")
     public void Form_button_turns_into_active_state(){
         navigationBar.isFormButtonActive();
     }
@@ -54,8 +54,13 @@ public class NavigationBarSD {
         errorMethod.verifyErrorMessage();
     }
 
-    @When("^user clicks to the Site Logo$")
-    public void user_clicks_to_the_Site_Logo()  {
+    @And("^Site logo is available$")
+    public void Site_logo_is_available(){
+        navigationBar.isSiteLogoDisplayed();
+    }
+
+    @When("^user clicks to the Site logo$")
+    public void user_clicks_to_the_Site_logo()  {
         navigationBar.clickToSiteLogo();
     }
 

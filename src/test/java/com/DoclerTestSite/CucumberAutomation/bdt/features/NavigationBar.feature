@@ -3,10 +3,10 @@ Feature: NavigationBar
   As a user
   I want to specify the navigation bar
 
-  Scenario Outline: DTS_NB_01-Clicks through all menu item and s Site Logo appearence
+  Scenario Outline: DTS_NB_01-Clicks through all menu item and check the Site Logo appearence
     Given user is on landing page
-    When <Button> is available
-    And user clicks to the <Button>
+    And <Button> is available
+    When user clicks to the <Button>
     Then <Page> loads
     And Site Logo appears
   Examples:

@@ -1,11 +1,12 @@
 package com.DoclerTestSite.CucumberAutomation.web.function;
 
+import com.DoclerTestSite.CucumberAutomation.utils.ElementHandler;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import static com.DoclerTestSite.CucumberAutomation.utils.DriverFactory.*;
 
-public class ErrorMethod {
+public class ErrorMethod extends ElementHandler{
 
     /**
      * All locators will be mentioned here
@@ -20,7 +21,7 @@ public class ErrorMethod {
      */
 
     public void verifyErrorMessage() {
-        waitVar.until(ExpectedConditions.presenceOfElementLocated(errorMessage));
+        waitForElementAppearance(errorMessage);
     }
 }
 

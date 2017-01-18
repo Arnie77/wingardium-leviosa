@@ -20,4 +20,3 @@ Feature: FormPage
       | Sophia      | Hello Sophia!  |
       | Charlie     | Hello Charlie! |
       | Emily       | Hello Emily!   |
-
