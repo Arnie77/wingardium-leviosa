@@ -8,6 +8,8 @@ package com.DoclerTestSite.CucumberAutomation.utils;
         import org.openqa.selenium.*;
         import org.openqa.selenium.support.ui.ExpectedConditions;
 
+        import static com.DoclerTestSite.CucumberAutomation.bdt.stepDefinitions.Hooks.scenario;
+
 
 public class ElementHandler extends DriverFactory{
 
@@ -24,9 +26,15 @@ public class ElementHandler extends DriverFactory{
             waitVar.until(ExpectedConditions.presenceOfElementLocated(locator));
         }
         catch (NoSuchElementException e){
+            scenario.write("The element can't found: " + locator.toString());
+            Assert.fail();
+        }
+        catch (TimeoutException e){
+            scenario.write("Timeout. The element can't found: " + locator.toString());
             Assert.fail();
         }
         catch (Exception e){
+            scenario.write("There was problem with find the element: " + locator.toString());
             Assert.fail();
         }
     }
@@ -37,6 +45,7 @@ public class ElementHandler extends DriverFactory{
             element.isDisplayed();
         }
         else {
+            scenario.write("The element can't found: " + locator.toString());
             Assert.fail();
         }
     }
@@ -47,6 +56,7 @@ public class ElementHandler extends DriverFactory{
             element.click();
         }
         else {
+            scenario.write("The element can't found: " + locator.toString());
             Assert.fail();
         }
     }
@@ -57,6 +67,7 @@ public class ElementHandler extends DriverFactory{
             element.sendKeys(text);
         }
         else {
+            scenario.write("The element can't found: " + locator.toString());
             Assert.fail();
         }
     }

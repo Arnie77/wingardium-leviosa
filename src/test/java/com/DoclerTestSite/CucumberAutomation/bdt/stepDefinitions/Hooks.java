@@ -15,9 +15,11 @@ package com.DoclerTestSite.CucumberAutomation.bdt.stepDefinitions;
 public class Hooks {
 
     DriverFactory df = new DriverFactory();
+    public static Scenario scenario;
 
     @Before
     public void beforeScenario(Scenario scenario) throws MalformedURLException, InterruptedException{
+        this.scenario = scenario;
         df.createDriver();
         System.out.println(scenario.getName());
     }
